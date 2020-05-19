@@ -12,3 +12,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 h1 {
     text-align: center;
 }
+
+img {
+    border: black solid 3px;
+}
