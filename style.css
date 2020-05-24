@@ -20,4 +20,15 @@ h1 {
 img {
     max-width: 100%;
     border: black solid 3px;
+    border-radius: 50%;
+    max-width: 166px;
+    max-height: 166px;
+    background-size: contain;
+}
+
+.top3,
+.middle3,
+.bottom3 {
+    display: flex;
+    justify-content: center;
 }
