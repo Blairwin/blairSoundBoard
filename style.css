@@ -15,6 +15,14 @@ body {
 
 h1 {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: #2342cc;
+}
+
+main {
+    border: black 3px solid;
+    border-radius: 10px;
 }
 
 img {
@@ -24,6 +32,24 @@ img {
     max-width: 166px;
     max-height: 166px;
     background-size: contain;
+    opacity: 0.8;
+}
+
+.image {
+    margin: 20px;
+}
+
+img:focus,
+img:active {
+    opacity: 0.8;
+    box-shadow: 0;
+}
+
+img:hover {
+    box-shadow: 0 0 5px 5px gold;
+    /* border: gold solid 3px; */
+    transition: 0.5s;
+    opacity: 1;
 }
 
 .top3,
@@ -31,4 +57,40 @@ img {
 .bottom3 {
     display: flex;
     justify-content: center;
+}
+
+.audio {
+    display: none;
+}
+
+
+
+/* FOOTER  */
+
+.footerFlex {
+    padding: 100px 5% 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+.content a:hover,
+.content a:focus,
+.icons i:hover,
+.icons i:focus {
+    color: #2342cc;
+    border-bottom: gold solid 3px;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+.icons i {
+    font-size: 1.75rem;
+    margin: 20px;
+    color: #898989;
 }
