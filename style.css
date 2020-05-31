@@ -2,10 +2,12 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 body {
     margin: 5%;
+    max-width: 1200px;
 }
 
 h1, 
-header p {
+header p,
+button {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     color: #2342cc;
@@ -14,6 +16,12 @@ header p {
 h1 {
     font-size: 3rem;
     margin-bottom: 0;
+}
+
+button:hover {
+    background-color: #2342cc;
+    color: gold;
+    border-radius: 5px;
 }
 
 main {
@@ -28,24 +36,35 @@ img {
     max-width: 166px;
     max-height: 166px;
     background-size: contain;
-    opacity: 0.8;
 }
 
 .image {
     margin: 20px;
+    position: relative;
+}
+
+.awesome {
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    color: white;
+    opacity: 0.6;
+    font-size: 2rem;
+}
+
+.awesome:hover {
+    color: black;
 }
 
 img:focus,
 img:active {
-    opacity: 0.8;
     box-shadow: 0;
 }
 
 img:hover {
     box-shadow: 0 0 5px 5px gold;
     /* border: gold solid 3px; */
-    transition: 0.5s;
-    opacity: 1;
+    transition: 0.5s;;
 }
 
 .top3,
@@ -104,9 +123,5 @@ footer a {
 
     .content {
         text-align: center;
-    }
-
-    img {
-        opacity: 1;
     }
 }
