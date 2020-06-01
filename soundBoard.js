@@ -92,21 +92,24 @@ document.getElementById("img9").addEventListener("click", () => {
 });
 
 // changes play icon to pause on click and back again
-// HOW TO APPLY IT to ALL of the images and not just one 
-document.querySelector('.image').addEventListener("click", function () {
-	const icon = this.querySelector("i");
-	if (icon.classList.contains("fa-play")) {
-		icon.classList.remove("fa-play");
-		icon.classList.add("fa-pause");
-	} else {
-		icon.classList.remove("fa-pause");
-		icon.classList.add("fa-play");
-	}
+const images = document.getElementsByClassName('image');
+// create a copy
+const imageArray = [...images]
+// Apply the code to each image 
+imageArray.forEach((image) => {
+	image.addEventListener("click", function () {
+		const icon = this.querySelector("i");
+		if (icon.classList.contains("fa-play")) {
+			icon.classList.remove("fa-play");
+			icon.classList.add("fa-pause");
+		} else {
+			icon.classList.remove("fa-pause");
+			icon.classList.add("fa-play");
+		}
+	});
 });
 
-
 // click button to get a random song 
-
 function getSong() {
 	const song = [
 		{
