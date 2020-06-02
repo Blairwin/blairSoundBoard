@@ -43,17 +43,30 @@ img {
     position: relative;
 }
 
-.awesome {
+.awesome,
+.awesome2 {
     position: absolute;
     top: 70px;
     right: 70px;
     color: white;
-    opacity: 0.6;
     font-size: 2rem;
 }
 
-.awesome:hover {
-    color: black;
+.awesome {
+    opacity: 0.6;
+}
+/* added second class to this image, as the white play button really wasn't showing up  */
+.awesome2 {
+    opacity: 0.9;
+}
+
+.image:hover .awesome i,
+.image:hover .awesome2 i {
+    color: gold;
+}
+
+.image:hover .awesome2 i {
+    opacity: 0.5;
 }
 
 img:focus,
@@ -63,8 +76,7 @@ img:active {
 
 img:hover {
     box-shadow: 0 0 5px 5px gold;
-    /* border: gold solid 3px; */
-    transition: 0.5s;;
+    transition: 0.5s;
 }
 
 .top3,
