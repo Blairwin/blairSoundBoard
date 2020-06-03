@@ -1,5 +1,8 @@
-// Note to self: simplify this! forEach? function. 
-const player = document.getElementById("audio");
+// I'm not done this project yet. This is a work in progress! But it more or less works... yay!
+// I'm working on simplifying this to a function - not done yet.
+
+const player0 = document.getElementById("audio0");
+const player1 = document.getElementById("audio1");
 const player2 = document.getElementById("audio2");
 const player3 = document.getElementById("audio3");
 const player4 = document.getElementById("audio4");
@@ -7,20 +10,28 @@ const player5 = document.getElementById("audio5");
 const player6 = document.getElementById("audio6");
 const player7 = document.getElementById("audio7");
 const player8 = document.getElementById("audio8");
-const player9 = document.getElementById("audio9");
 
 // // click image & song plays or pauses
-const button = document.getElementById("img");
-document.getElementById("img").addEventListener("click", () => {
-    if (player.paused) {
-		player.play();
+const button0 = document.getElementById("img0");
+button0.addEventListener("click", () => {
+    if (player0.paused) {
+		player0.play();
 	} else {
-		player.pause();
+		player0.pause();
+	}
+});
+
+const button1 = document.getElementById("img1");
+button1.addEventListener("click", () => {
+	if (player1.paused) {
+		player1.play();
+	} else {
+		player1.pause();
 	}
 });
 
 const button2 = document.getElementById("img2");
-document.getElementById("img2").addEventListener("click", () => {
+button2.addEventListener("click", () => {
 	if (player2.paused) {
 		player2.play();
 	} else {
@@ -29,7 +40,7 @@ document.getElementById("img2").addEventListener("click", () => {
 });
 
 const button3 = document.getElementById("img3");
-document.getElementById("img3").addEventListener("click", () => {
+button3.addEventListener("click", () => {
 	if (player3.paused) {
 		player3.play();
 	} else {
@@ -38,7 +49,7 @@ document.getElementById("img3").addEventListener("click", () => {
 });
 
 const button4 = document.getElementById("img4");
-document.getElementById("img4").addEventListener("click", () => {
+button4.addEventListener("click", () => {
 	if (player4.paused) {
 		player4.play();
 	} else {
@@ -47,7 +58,7 @@ document.getElementById("img4").addEventListener("click", () => {
 });
 
 const button5 = document.getElementById("img5");
-document.getElementById("img5").addEventListener("click", () => {
+button5.addEventListener("click", () => {
 	if (player5.paused) {
 		player5.play();
 	} else {
@@ -56,7 +67,7 @@ document.getElementById("img5").addEventListener("click", () => {
 });
 
 const button6 = document.getElementById("img6");
-document.getElementById("img6").addEventListener("click", () => {
+button6.addEventListener("click", () => {
 	if (player6.paused) {
 		player6.play();
 	} else {
@@ -65,7 +76,7 @@ document.getElementById("img6").addEventListener("click", () => {
 });
 
 const button7 = document.getElementById("img7");
-document.getElementById("img7").addEventListener("click", () => {
+button7.addEventListener("click", () => {
 	if (player7.paused) {
 		player7.play();
 	} else {
@@ -74,7 +85,7 @@ document.getElementById("img7").addEventListener("click", () => {
 });
 
 const button8 = document.getElementById("img8");
-document.getElementById("img8").addEventListener("click", () => {
+button8.addEventListener("click", () => {
 	if (player8.paused) {
 		player8.play();
 	} else {
@@ -82,19 +93,32 @@ document.getElementById("img8").addEventListener("click", () => {
 	}
 });
 
-const button9 = document.getElementById("img9");
-document.getElementById("img9").addEventListener("click", () => {
-	if (player9.paused) {
-		player9.play();
-	} else {
-		player9.pause();
-	}
-});
+// working on simplifying the above to a function 
+
+// function playSong(trackId) {
+// //    let audioID = "audio" + trackId.toString();
+//     const player = document.getElementById(trackId);
+//     if (player.paused) {
+// 			player.play();
+// 		} else {
+// 			player.pause();
+// 		}
+// }
+
+// const buttons = document.getElementsByClassName('image');
+// const buttonsArray = [...buttons];
+// let i = 0;
+// buttonsArray.forEach((pic) => {
+//     pic.addEventListener("click", () => {
+//         playSong(this.id);
+//     });
+//     i++;
+// });
 
 // changes play icon to pause on click and back again
 const images = document.getElementsByClassName('image');
 // create a copy
-const imageArray = [...images]
+const imageArray = [...images];
 // Apply the code to each image 
 imageArray.forEach((image) => {
 	image.addEventListener("click", function () {
@@ -110,6 +134,8 @@ imageArray.forEach((image) => {
 });
 
 // click button to get a random song 
+// Planning to ADD stopping one song before another starts on random in this section! Haven't done it yet! 
+
 function getSong() {
 	const song = [
 		{
@@ -151,8 +177,7 @@ function getSong() {
 	];
 
     const randomSong = song[Math.floor(Math.random() * song.length)];
-
-    // ADD stopping one song before another starts on random 
+ 
     const audio = new Audio(randomSong.src);
 	audio.play();
 }
@@ -162,10 +187,13 @@ document.querySelector('button').addEventListener("click", () => {
 });
 
 // pause all music 
-// it would be great to figure out a better solution to stopping the audio for the random button 
+// hoping to figure out a better solution to stopping the audio for the random button - for now, just reloading the page
+
 document.querySelector('.quiet').onclick = function () {
 	// const sounds = document.getElementsByTagName("audio");
     // for (i = 0; i < sounds.length; i++) sounds[i].pause();
     location.reload();
 	return false;
 };
+
+// Also want to add something to stop currently playing audio if another is starting up
