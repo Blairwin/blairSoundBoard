@@ -197,3 +197,5 @@ document.querySelector('.quiet').onclick = function () {
 };
 
 // Also want to add something to stop currently playing audio if another is starting up
+
+// I also want to add something to change the pause button on the image back to play once the track is finished
